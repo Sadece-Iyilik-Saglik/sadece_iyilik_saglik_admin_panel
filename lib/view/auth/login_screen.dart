@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
       body: Stack(
         children: [
           const Opacity(
-            opacity: 0.5,
+            opacity: 0.55,
             child: Image(
               image: AssetImage(
                 "assets/images/akdu.jpg",
@@ -26,6 +26,10 @@ class LoginScreen extends StatelessWidget {
           ),
           Center(
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              elevation: 50,
               color: Colors.white60.withOpacity(0.95),
               child: Container(
                 width: MediaQuery.sizeOf(context).height * 0.56,

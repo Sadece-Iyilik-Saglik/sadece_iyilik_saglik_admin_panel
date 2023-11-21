@@ -57,7 +57,9 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFFED8C42)),
+                  borderSide: BorderSide(
+                    color: Color(0xFFED8C42),
+                  ),
                 ),
               ),
               onChanged: (value) {
@@ -128,7 +130,6 @@ class _LoginFormState extends State<LoginForm> {
             const SizedBox(
               height: 10,
             ),
-
             // register forgot password kısmı
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -167,13 +168,18 @@ class _LoginFormState extends State<LoginForm> {
               ],
             ),
             const SizedBox(
-              height: 10,
+              height: 25,
             ),
             // Sign in Butonu
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                  ),
                   backgroundColor: const Color(0xFF273C66),
                 ),
                 onPressed: () {
@@ -188,40 +194,15 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 child: const Align(
                   alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.login,
-                        color: Colors.white,
-                      ),
-                      SizedBox(width: 8.0),
-                      Text(
-                        "LOGIN",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
+                  child: Text(
+                    "Giriş Yap",
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ), // Sign in
             ),
             const SizedBox(
-              height: 10,
-            ),
-            // Fill administrator credentials
-            TextButton.icon(
-              onPressed: () {
-                // Implement register functionality
-              },
-              icon: const Icon(Icons.crop_free),
-              label: Text(
-                'Fill administrator credentials?'.toUpperCase(),
-                style: const TextStyle(color: Colors.black, fontSize: 12),
-              ),
-              style: ButtonStyle(
-                foregroundColor:
-                    MaterialStateProperty.all(const Color(0xFF273C66)),
-              ),
+              height: 25,
             ),
           ],
         ),

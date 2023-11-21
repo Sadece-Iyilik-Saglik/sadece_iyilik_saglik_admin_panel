@@ -4,6 +4,7 @@ import 'package:sadece_iyilik_saglik_admin_panel/view/home/home_screen.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 import '../../core/base/view/base_view.dart';
+import '../content_screen/content_screen.dart';
 
 class DefaultHome extends StatefulWidget {
   const DefaultHome({super.key});
@@ -79,9 +80,9 @@ class _ScreensExampleState extends State<_ScreensExample> {
         final pageTitle = _getTitleByIndex(widget.controller.selectedIndex);
         switch (widget.controller.selectedIndex) {
           case 0:
-            return const HomeScreen();
+            return const GeneralConfigurations();
           case 1:
-          // return const ResponsiveTenantsPage();
+            return const ContentScreen();
           case 2:
           // return const AdminProfile();
           case 3:

@@ -58,7 +58,7 @@ class ExampleSidebarX extends StatelessWidget {
         ),
       ),
       extendedTheme: const SidebarXTheme(
-        width: 250,
+        width: 300,
         decoration: BoxDecoration(
           color: Color(0xFF121E2D),
         ),
@@ -72,7 +72,9 @@ class ExampleSidebarX extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(child: Image.asset(logoAkdeniz)),
+                Expanded(
+                  child: Image.asset(logoAkdeniz),
+                ),
                 const Text(
                   "Akdeniz Üniversitesi",
                   style: TextStyle(color: Color(0xFFC2C7D0)),
@@ -82,23 +84,20 @@ class ExampleSidebarX extends StatelessWidget {
           ),
         );
       },
-      items: [
+      items: const [
         SidebarXItem(
           icon: Icons.home,
           label: 'Genel İşlemler',
-          onTap: () {
-            debugPrint('Genel İşlemler');
-          },
         ),
-        const SidebarXItem(
+        SidebarXItem(
           icon: Icons.corporate_fare_outlined,
-          label: 'Test İşlemleri',
+          label: 'İçerik işlemleri',
         ),
-        const SidebarXItem(
+        SidebarXItem(
           icon: Icons.person,
-          label: 'Admin profile',
+          label: 'Admin profili',
         ),
-        const SidebarXItem(
+        SidebarXItem(
           icon: Icons.settings,
           label: 'Ayarlar',
         )
