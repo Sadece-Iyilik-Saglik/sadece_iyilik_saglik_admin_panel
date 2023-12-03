@@ -27,14 +27,14 @@ class LoginScreen extends StatelessWidget {
           Center(
             child: Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(15),
               ),
               elevation: 50,
-              color: Colors.white60.withOpacity(0.95),
+              color: Colors.white60.withOpacity(0.88),
               child: Container(
                 width: MediaQuery.sizeOf(context).height * 0.56,
-                height: MediaQuery.sizeOf(context).height * 0.95,
-                padding: const EdgeInsets.all(20.0),
+                height: MediaQuery.sizeOf(context).height * 0.88,
+                padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
@@ -46,14 +46,10 @@ class LoginScreen extends StatelessWidget {
                         image: AssetImage(logoAkdeniz),
                       ),
                     ),
-                    Text(
-                      'Sign In',
-                      style: TextStyle(color: Colors.black, fontSize: 25.0),
-                    ),
-                    Text(
-                      'Enter your credentials to get started.',
-                      style: TextStyle(color: Colors.black, fontSize: 14.0),
-                    ),
+                    // Text(
+                    //   'Sadece iyilik sağlık',
+                    //   style: TextStyle(color: Colors.black, fontSize: 14.0),
+                    // ),
                     LoginForm(),
                   ],
                 ),

@@ -1,7 +1,7 @@
 class Article {
-  final String author;
-  final String title;
-  final String content;
+  late final String author;
+  late final String title;
+  late final String content;
   final String source;
 
   Article({

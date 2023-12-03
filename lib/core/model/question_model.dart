@@ -1,7 +1,7 @@
 import '../const/enum/question_enum.dart';
 
 class Question {
-  final String content;
+  late final String content;
   final QuestionType questionType;
   final List<String> options;
   final int trueOptionIndex;
