@@ -2,7 +2,7 @@ class Article {
   late final String author;
   late final String title;
   late final String content;
-  final String source;
+  late final String source;
 
   Article({
     required this.author,

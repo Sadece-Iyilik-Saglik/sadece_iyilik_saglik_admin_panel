@@ -17,11 +17,9 @@ class LoginScreen extends StatelessWidget {
               image: AssetImage(
                 "assets/images/akdu.jpg",
               ),
-              // NetworkImage(
-              //     'https://upload.wikimedia.org/wikipedia/commons/9/9e/Akdeniz_%C3%9Cniversitesi.jpg'),
-              fit: BoxFit.cover, // Resmi Stack boyutuna göre ölçekle
-              width: double.infinity, // Genişliği ekrana sığdır
-              height: double.infinity, // Yüksekliği ekrana sığdır
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
             ),
           ),
           Center(
@@ -34,7 +32,8 @@ class LoginScreen extends StatelessWidget {
               child: Container(
                 width: MediaQuery.sizeOf(context).height * 0.56,
                 height: MediaQuery.sizeOf(context).height * 0.88,
-                padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
@@ -46,10 +45,6 @@ class LoginScreen extends StatelessWidget {
                         image: AssetImage(logoAkdeniz),
                       ),
                     ),
-                    // Text(
-                    //   'Sadece iyilik sağlık',
-                    //   style: TextStyle(color: Colors.black, fontSize: 14.0),
-                    // ),
                     LoginForm(),
                   ],
                 ),

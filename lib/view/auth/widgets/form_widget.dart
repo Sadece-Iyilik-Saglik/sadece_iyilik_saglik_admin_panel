@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sadece_iyilik_saglik_admin_panel/view/default_home/default_home.dart';
-
-import '../forgot_password.dart';
+import '../../content_screen/content_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -103,46 +101,6 @@ class _LoginFormState extends State<LoginForm> {
               },
             ),
             const SizedBox(
-              height: 20,
-            ),
-            // register forgot password kısmı
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // Register?
-                TextButton.icon(
-                  onPressed: () {
-                    // Implement register functionality
-                  },
-                  icon: const Icon(Icons.app_registration_rounded),
-                  label: Text(
-                    'Register?'.toUpperCase(),
-                    style: const TextStyle(color: Colors.black, fontSize: 12),
-                  ),
-                  style: ButtonStyle(
-                    foregroundColor:
-                        MaterialStateProperty.all(const Color(0xFF273C66)),
-                  ),
-                ),
-                // Forgot Password
-                TextButton.icon(
-                  onPressed: () {
-                    // Implement forgot password functionality
-                    ForgotPasswordScreen.buildShowModalBottomSheet(context);
-                  },
-                  icon: const Icon(Icons.lock_reset_outlined),
-                  label: Text(
-                    'Forgot Password?'.toUpperCase(),
-                    style: const TextStyle(color: Colors.black, fontSize: 12),
-                  ),
-                  style: ButtonStyle(
-                    foregroundColor:
-                        MaterialStateProperty.all(const Color(0xFF273C66)),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
               height: 45,
             ),
             // Sign in Butonu
@@ -161,7 +119,8 @@ class _LoginFormState extends State<LoginForm> {
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const DefaultHome(),
+                      builder: (context) => const ContentScreen(),
+                      // DefaultHome(),
                     ),
                     (route) => false,
                   );

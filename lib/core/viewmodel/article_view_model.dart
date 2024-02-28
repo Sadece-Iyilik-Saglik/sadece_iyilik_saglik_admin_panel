@@ -164,4 +164,8 @@ class ArticleViewModel {
       source: "Health Informatics Trends",
     ),
   ];
+
+  static void addArticle(Article article) {
+    allArticles.add(article);
+  }
 }
