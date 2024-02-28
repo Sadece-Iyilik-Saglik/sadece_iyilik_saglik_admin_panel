@@ -13,8 +13,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sadece İyilik Sağlık',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primaryColor: const Color(0xFF685BFF),
+        hintColor: const Color(0xFFED8C42),
+        scaffoldBackgroundColor: Colors.white,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF685BFF),
+            textStyle: const TextStyle(color: Colors.white),
+          ),
+        ),
       ),
       home: const LoginScreen(),
       debugShowCheckedModeBanner: false,

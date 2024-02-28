@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sadece_iyilik_saglik_admin_panel/view/default_home/default_home.dart';
-
-import '../forgot_password.dart';
+import '../../content_screen/content_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -33,7 +31,7 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Form(
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 10.0),
+        padding: const EdgeInsets.symmetric(vertical: 30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -103,72 +101,7 @@ class _LoginFormState extends State<LoginForm> {
               },
             ),
             const SizedBox(
-              height: 20,
-            ),
-            // Tenant
-            TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.apartment_outlined),
-                labelText: "Tenant",
-                hintText: "Tenant *",
-                labelStyle: TextStyle(
-                  color: Color(0xB2000000),
-                ),
-                hintStyle: TextStyle(
-                  color: Color(0xB2000000),
-                  fontSize: 12.0,
-                  fontStyle: FontStyle.italic,
-                ),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFF685BFF)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFFED8C42)),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            // register forgot password kısmı
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // Register?
-                TextButton.icon(
-                  onPressed: () {
-                    // Implement register functionality
-                  },
-                  icon: const Icon(Icons.app_registration_rounded),
-                  label: Text(
-                    'Register?'.toUpperCase(),
-                    style: const TextStyle(color: Colors.black, fontSize: 12),
-                  ),
-                  style: ButtonStyle(
-                    foregroundColor:
-                        MaterialStateProperty.all(const Color(0xFF273C66)),
-                  ),
-                ),
-                // Forgot Password
-                TextButton.icon(
-                  onPressed: () {
-                    // Implement forgot password functionality
-                    ForgotPasswordScreen.buildShowModalBottomSheet(context);
-                  },
-                  icon: const Icon(Icons.lock_reset_outlined),
-                  label: Text(
-                    'Forgot Password?'.toUpperCase(),
-                    style: const TextStyle(color: Colors.black, fontSize: 12),
-                  ),
-                  style: ButtonStyle(
-                    foregroundColor:
-                        MaterialStateProperty.all(const Color(0xFF273C66)),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 25,
+              height: 45,
             ),
             // Sign in Butonu
             SizedBox(
@@ -186,7 +119,8 @@ class _LoginFormState extends State<LoginForm> {
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const DefaultHome(),
+                      builder: (context) => const ContentScreen(),
+                      // DefaultHome(),
                     ),
                     (route) => false,
                   );
@@ -202,74 +136,11 @@ class _LoginFormState extends State<LoginForm> {
               ), // Sign in
             ),
             const SizedBox(
-              height: 25,
+              height: 10,
             ),
           ],
         ),
       ),
     );
   }
-
-  // void showLogIn(Future<BaseModel<AuthenticateModel>> logInFuture) async {
-  //   showDialog(
-  //     context: context,
-  //     builder: (context) => FutureBuilder<BaseModel<AuthenticateModel>>(
-  //         future: logInFuture,
-  //         builder:
-  //         ((context, AsyncSnapshot<BaseModel<AuthenticateModel>> snapshot) {
-  //           if (snapshot.hasData && snapshot.data!.suc) {
-  //             ///Sunucuya 200 ile başarılı istek atıldı
-  //             return SimpleDialog(
-  //               title: const Text("Successfully Logged in"),
-  //               children: [
-  //                 ElevatedButton(
-  //                   onPressed: () {
-  //                     setState(() {
-  //                       TokenClass.me = snapshot.data!.data!;
-  //                     });
-  //                     Navigator.pop(context);
-  //                     Navigator.pushAndRemoveUntil(
-  //                       context,
-  //                       MaterialPageRoute(
-  //                           builder: (context) => const Tenants()),
-  //                           (route) => false,
-  //                     );
-  //                   },
-  //                   child: const Text("Okay"),
-  //                 ),
-  //               ],
-  //             );
-  //           } else if (snapshot.hasData && !snapshot.data!.suc) {
-  //             ///Sunucuya 400 veya başka kod ile ile başarısız istek atıldı
-  //             return SimpleDialog(
-  //               title: const Text("Error"),
-  //               children: [
-  //                 Text(snapshot.data!.exception.toString()),
-  //                 ElevatedButton(
-  //                   onPressed: () {
-  //                     Navigator.pop(context);
-  //                   },
-  //                   child: const Text("Tamam"),
-  //                 ),
-  //               ],
-  //             );
-  //           } else if (snapshot.hasError) {
-  //             return SimpleDialog(
-  //               title: const Text("Error"),
-  //               children: [
-  //                 Text(snapshot.error.toString()),
-  //                 ElevatedButton(
-  //                   onPressed: () {
-  //                     Navigator.pop(context);
-  //                   },
-  //                   child: const Text("Tamam"),
-  //                 ),
-  //               ],
-  //             );
-  //           } else {
-  //             return const Center(child: CircularProgressIndicator());
-  //           }
-  //         })),
-  //   );
-  // }
 }
